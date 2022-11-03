@@ -125,7 +125,6 @@ class UI():
             if not(self.df.empty):
                 with st.spinner('Computing Stocks'):
                     self.model,self.p = self.compute_model()
-                    st.balloons()
                 self.tabs(["Stock Details", "Stock Closing Price plots"])
                 self.k = self.container('Forecast')
                 self.plot_predictions()
