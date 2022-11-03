@@ -134,7 +134,10 @@ class UI():
     @st.cache(show_spinner=False)
     def fetch_data(self):
         df = pd.DataFrame()
-        df = web.DataReader(self.code, data_source="yahoo", start='2018-01-01', end=date.today())
+        try:
+            df = web.DataReader(self.code, data_source="yahoo", start='2018-01-01', end=date.today())
+        except:
+            return df
         data = df['Close']
         ema_short = data.ewm(span=20, adjust=False).mean()
         df['EMA'] = ema_short
