@@ -130,6 +130,7 @@ class UI():
                 self.k = self.container('Forecast')
                 self.plot_predictions()
             else:
+                st.snow()
                 st.error("No Stock Code Named \'" + self.code + "\' Found")
     @st.cache(show_spinner=False)
     def fetch_data(self):
