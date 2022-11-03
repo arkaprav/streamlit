@@ -126,6 +126,7 @@ class UI():
                 with st.spinner('Computing Stocks'):
                     self.model,self.p = self.compute_model()
                 self.tabs(["Stock Details", "Stock Closing Price plots"])
+                st.balloons()
                 self.k = self.container('Forecast')
                 self.plot_predictions()
             else:
