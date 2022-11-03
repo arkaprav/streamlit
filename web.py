@@ -164,4 +164,5 @@ class UI():
         forecast_y, forecast_df, plot_df = self.p.transform_forecast(forecast_y)
         fig = px.line(plot_df, x=plot_df.index, y=['Close', 'Forecast', 'EMA'], title='Forecasting')
         st.plotly_chart(fig, use_container_width=True,)
-UI()
+if __name__ == '__main__':
+    UI()
