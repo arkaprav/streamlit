@@ -12,6 +12,7 @@ class Model():
     def __init__(self,feats: int):
         self.model = Sequential()
         self.model.add(LSTM(50, return_sequences=True, input_shape=(feats, 1)))
+        self.model.add(LSTM(50, return_sequences=True))
         self.model.add(LSTM(50))
         self.model.add(Dense(1))
         self.model.compile(optimizer='adam', loss='mean_squared_error')
