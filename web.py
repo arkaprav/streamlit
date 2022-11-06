@@ -159,7 +159,7 @@ class UI():
     def container(self,name):
         c = st.container()
         c.header(name+' plot')
-        k = c.slider(name+' time', 1, 365)
+        k = c.slider(name+' time', 1, 360)
         return k
     def plot_predictions(self):
         forecast_X = self.p.prepare_forecast(self.df, self.k)
